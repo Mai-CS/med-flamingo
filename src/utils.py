@@ -32,6 +32,7 @@ class FlamingoProcessor(AbstractProcessor):
         # For generation padding tokens should be on the left
         return self.tokenizer([prompt],
             return_tensors="pt",
+            padding="max_length",
         )
     
     def preprocess_images(self, images: list):
